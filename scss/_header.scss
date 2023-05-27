@@ -1,0 +1,96 @@
+header{
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 100%;
+    padding-top: 20px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        .logo{
+            min-width: 150px;
+            height: auto;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            ul{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                li{
+                    color: $white;
+                    margin-right: 40px;
+                    a{
+                        color: $white;
+                    
+                        &:hover{
+                            color: $orange;
+                        }
+                    }
+                }
+            }
+            .btns{
+                .btn{
+                    padding: 8px 20px;
+                    font-family: 'Inter';
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                .btn-outline-primary{
+                    margin-left: 30px;
+                }
+            }
+        }
+        .menu-toggle{
+            font-size: 23px;
+            color: $white;
+            display: none;
+        }
+    }
+    
+    @media (max-width: 991px){
+        .container{
+            flex-direction: column;
+            .content-dropdown {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+            nav {
+                display: none;
+            }
+            .menu-dropdown{    
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 32px;
+
+                ul {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    li{
+                        padding: 10px 0;
+                    }
+                }
+                .btns {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    margin-top: 8px;
+                    
+                    .btn-outline-primary{
+                        margin-top: 20px;
+                        margin-left: 0;
+                    }
+                }
+            }
+            .menu-toggle{
+                display: block;
+            }
+
+        }
+    }
+}

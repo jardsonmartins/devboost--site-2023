@@ -1,0 +1,106 @@
+footer{
+    height: auto;
+    background: url('../img/background_footer.svg') center center;
+    color: $white;
+
+    .container{
+        .top{
+            padding: 60px 0 25px 0;
+            display: flex;
+            justify-content: space-between;
+            .logo{
+                max-width: 165px;
+                .linha{
+                    margin: 24px 0 16px 0;
+                    width: 41px;
+                    height: 2px;
+                    background: linear-gradient(95.54deg, #F3451C -6.71%, #FF933A 142.56%) !important;
+                    border-radius: 7px;
+                }
+            }
+            .menu, .contatos, .transparencia{
+                h6{
+                    color: $orange;
+                    margin-bottom: 15px;
+                }
+                ul{
+                    li{
+                        &:not(:first-child){
+                            margin-top: 12px;
+                        }
+                        a{
+                            color: $white;
+                            i{
+                                margin-right: 10px;
+                            }
+                            &:hover{
+                                color: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bottom{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 25px 0;
+
+            .social{
+                ul{
+                    display: flex;
+                    flex-direction: row;
+
+                    li{
+                        &:not(:first-child){
+                            margin-left: 15px;
+                        }
+                        a{
+                            color: $white;
+                            &:hover{
+                                color: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991px){
+        .container{
+            .top{
+                flex-wrap: wrap;
+            }
+        }
+    }
+    @media (max-width: 576px){
+        .container{
+            text-align: center;
+
+            .top{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .logo{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .menu, .contatos, .transparencia{
+                    margin-top: 40px;
+                }
+            }
+            .bottom{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .social{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

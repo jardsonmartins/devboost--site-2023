@@ -1,0 +1,29 @@
+{
+  "name": "devboost-setup-basic",
+  "version": "1.0.0",
+  "description": "This is a basic setup for you to start your projects with sass",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch scss/global.scss:css/main.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devboost-education/devboost-setup-basic.git"
+  },
+  "keywords": [
+    "devboost",
+    "setup",
+    "basic"
+  ],
+  "author": "DevBoost",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devboost-education/devboost-setup-basic/issues"
+  },
+  "homepage": "https://github.com/devboost-education/devboost-setup-basic#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "aos": "^2.3.4",
+    "swiper": "^9.1.1"
+  }
+}
