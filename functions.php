@@ -15,13 +15,6 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 // Habilita a funcionalidade de imagens destacadas
 add_theme_support('post-thumbnails');
 
-
-// Inclua o arquivo de reset CSS
-function wpse_enqueue_reset_css() {
-  wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/css/main.css' );
-}
-add_action( 'wp_enqueue_scripts', 'wpse_enqueue_reset_css' );
-
 // Função para habilitar o gerenciamento de menus
 add_theme_support('menus');
 
@@ -30,6 +23,33 @@ function register_menu_principal() {
 }
 add_action( 'init', 'register_menu_principal' );
 
+// Contador de views do post
+function setPotsViews($postID){
+  $countKey = 'post_views_count';
+  $count = get_post_meta($postID, $countKey, true);
+  if($count==''){
+      $count = 0;
+      delete_post_meta($postID, $countKey);
+      add_post_meta($postID, $countKey, '0');
+  }else{
+      $count++;
+      update_post_meta($postID, $countKey, $count);
+  }
+}
+
+// Limitar a quantidade de caracteres na descrição do post
+function short_content($len = 80, $post_id=null){
+  $content = get_the_content($post_id);
+  if(strlen($content) > $len){
+      $content = substr($content, 0, $len).'...';
+  }
+  echo $content;
+}
+
+// Inclua o arquivo de reset CSS
+function wpse_enqueue_reset_css() {
+  wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/css/main.css' );
+}
+add_action( 'wp_enqueue_scripts', 'wpse_enqueue_reset_css' );
+
 ?>
-
-

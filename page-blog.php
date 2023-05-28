@@ -35,42 +35,67 @@
         <section class="mostSeen">
             <div class="container">
                 <div class="left-content">
-                    <a href="" class="card-post-lg">
+
+                    <?php
+                        $args = array(
+                            'meta_key' => 'post_views_count',
+                            'posts_per_page' => 1,
+                            'orderby' => 'meta_value_num',
+                            'order' => 'DESC'
+                        );
+                        $top_views_posts = new WP_Query($args);
+                    ?>
+                    <?php if(have_posts()) : while ($top_views_posts -> have_posts()) : $top_views_posts -> the_post(); ?>
+                    <a href="<?php the_permalink(); ?>" class="card-post-lg">
                         <div class="image">
                             <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
                         </div>
-                        <span class="title">Notícias</span>
-                        <h4>Lorem ipsum dolor sit amet consectetur. Ullamcorper id pharetra auctor a augue. Iaculis sit nunc nam adipiscing.</h4>
+                        <?php 
+                            $category = get_the_category( $post -> ID);
+
+                            if(!empty($category)){
+                                foreach($category as $nameCategory){
+                                    echo '<span class="title">'.$nameCategory -> name.'</span>';
+                                }
+                            }
+                        ?>
+                        <h4><?php the_title(); ?></h4>
                     </a> 
+                    <?php endwhile; endif; wp_reset_query() ?>
+
                 </div>   
                 <div class="right-content">
-                    <a href="" class="card-post-xs">
+
+                    <?php
+                        $args = array(
+                            'offset' => 1,
+                            'meta_key' => 'post_views_count',
+                            'posts_per_page' => 3,
+                            'orderby' => 'meta_value_num',
+                            'order' => 'DESC'
+                        );
+                        $top_views_posts = new WP_Query($args);
+                    ?>
+                    <?php if(have_posts()) : while ($top_views_posts -> have_posts()) : $top_views_posts -> the_post(); ?>                     
+                    <a href="<?php the_permalink(); ?>" class="card-post-xs">
                         <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
+                            <?php the_post_thumbnail(); ?>
                         </div>
                         <div class="info">
-                            <span class="title">Notícias</span>
-                            <h5>A importância do microcrédito produtivo orientado</h5>
+                            <?php 
+                                $category = get_the_category( $post -> ID);
+
+                                if(!empty($category)){
+                                    foreach($category as $nameCategory){
+                                        echo '<span class="title">'.$nameCategory -> name.'</span>';
+                                    }
+                                }
+                            ?>
+                            <h5><?php the_title(); ?></h5>
                         </div>
                     </a>
-                    <a href="" class="card-post-xs">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <span class="title">Notícias</span>
-                            <h5>A importância do microcrédito produtivo orientado</h5>
-                        </div>
-                    </a>
-                    <a href="" class="card-post-xs">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <span class="title">Notícias</span>
-                            <h5>A importância do microcrédito produtivo orientado</h5>
-                        </div>
-                    </a>
+                    <?php endwhile; endif; wp_reset_query() ?>
+                    
                 </div>
             </div>
         </section>
@@ -79,91 +104,45 @@
             <div class="container">
                 <div class="left-content">
                     <h2>Últimas notícias</h2>
-                    <a href="" class="card-post-default">
+                    <?php
+                        $config = array (
+                            'posts_per_page' => '10',
+                            'post_type' => 'post',
+                            'order' => 'DESC'
+                        );
+
+                        $query_posts = new WP_Query( $config );
+                    ?>
+                    <?php if(have_posts()) : while ($query_posts -> have_posts()) : $query_posts -> the_post(); ?>
+                    <a href="<?php the_permalink(); ?>" class="card-post-default">
                         <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
+                            <?php the_post_thumbnail(); ?>
                         </div>
                         <div class="info">
-                            <span class="title">Notícias</span>
-                            <h4>Lorem ipsum dolor sit amet consectetur. At odio cras sed euismod commodo orci justo non ut.</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur. Sagittis turpis netus mi vel sed. Lorem arcu fringilla amet sed amet et neque dignissim nulla.</p>
+                            <?php 
+                                $category = get_the_category( $post -> ID);
+
+                                if(!empty($category)){
+                                    foreach($category as $nameCategory){
+                                        echo '<span class="title">'.$nameCategory -> name.'</span>';
+                                    }
+                                }
+                            ?>
+                            <h4><?php the_title(); ?></h4>
+                            <p><?php short_content(200);?></p>
                             <ul>
                                 <li>
-                                    <i class="icon fa-regular fa-clock"></i>26 de <span>setembro</span> de 2022
+                                    <i class="icon fa-regular fa-clock"></i><?php echo get_the_date(); ?>
                                 </li>
                                 <li>
-                                    <i class="icon fa-regular fa-eye"></i><span>4 min</span> de leitura
+                                    <i class="icon fa-regular fa-eye"></i><span><?php echo do_shortcode('[rt_reading_time postfix="min" postfix_singular="min"]') ?></span> de leitura
                                 </li>
                             </ul>
                         </div>
                     </a>
-                    <a href="" class="card-post-default">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <span class="title">Notícias</span>
-                            <h4>Lorem ipsum dolor sit amet consectetur. At odio cras sed euismod commodo orci justo non ut.</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur. Sagittis turpis netus mi vel sed. Lorem arcu fringilla amet sed amet et neque dignissim nulla.</p>
-                            <ul>
-                                <li>
-                                    <i class="icon fa-regular fa-clock"></i>26 de <span>setembro</span> de 2022
-                                </li>
-                                <li>
-                                    <i class="icon fa-regular fa-eye"></i><span>4 min</span> de leitura
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                    <a href="" class="card-post-default">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <span class="title">Notícias</span>
-                            <h4>Lorem ipsum dolor sit amet consectetur. At odio cras sed euismod commodo orci justo non ut.</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur. Sagittis turpis netus mi vel sed. Lorem arcu fringilla amet sed amet et neque dignissim nulla.</p>
-                            <ul>
-                                <li>
-                                    <i class="icon fa-regular fa-clock"></i>26 de <span>setembro</span> de 2022
-                                </li>
-                                <li>
-                                    <i class="icon fa-regular fa-eye"></i><span>4 min</span> de leitura
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                    <a href="" class="card-post-default">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <span class="title">Notícias</span>
-                            <h4>Lorem ipsum dolor sit amet consectetur. At odio cras sed euismod commodo orci justo non ut.</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur. Sagittis turpis netus mi vel sed. Lorem arcu fringilla amet sed amet et neque dignissim nulla.</p>
-                            <ul>
-                                <li>
-                                    <i class="icon fa-regular fa-clock"></i>26 de <span>setembro</span> de 2022
-                                </li>
-                                <li>
-                                    <i class="icon fa-regular fa-eye"></i><span>4 min</span> de leitura
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
+                    <?php endwhile; endif; wp_reset_query() ?>
                 </div>
-                <div class="right-content">
-                    <h3>Conteúdo gratuito</h3>
-                    <a href="" class="free-content">
-                        <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                    </a>
-                    <a href="" class="free-content">
-                        <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                    </a>
-                    <a href="" class="free-content">
-                        <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
-                    </a>
-                </div>
+                <?php include(TEMPLATEPATH .'/includes/free-content.php') ?>
             </div>
         </section>
 

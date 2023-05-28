@@ -173,7 +173,7 @@ details > summary {
             object-fit: cover;
             transition: transform 0.3s ease;
             &:hover{
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
         }
     }
@@ -190,7 +190,7 @@ details > summary {
             li{
                 color: #605E70;
                 .icon{
-                    margin-right: 10px;
+                    margin-right: 5px;
                 }
                 span{
                     font-weight: 700;
@@ -203,23 +203,64 @@ details > summary {
             }
         }
     }
+    @media (max-width: 576px){
+        flex-direction: column;
+        .image{
+            width: 100%;
+            height: 250px;
+        }
+        .info{
+            margin: 20px 0 0 5px;
+        }
+    }
 }
 
 //Conteúdo gratúito
 .free-content{
-    display: block;
-    max-width: 280px;
-    height: 160px;
-    overflow: hidden;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-        &:hover{
-            transform: scale(1.1);
+    h3{
+        margin-bottom: 25px;
+    }
+    .all{
+        .card-free-content{
+            display: block;
+            max-width: 280px;
+            height: 160px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+    @media (max-width: 1250px){
+        h3{
+            margin-top: 30px;
+        }
+        .all{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+    @media (max-width: 576px){
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .all{
+            display: flex;
+            flex-direction: column;
+            .card-free-content{
+                max-width: 100%;
+                height: 200px;
+            }
         }
     }
 }
@@ -267,6 +308,34 @@ details > summary {
                 font-weight: 400;
                 font-size: 15px;
                 line-height: 22px;
+            }
+        }
+    }
+    @media (max-width: 1220px){
+        .container{
+            .image{
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 576px){
+        height: auto;
+        padding: 40px 0;
+        text-align: center;
+        .container{
+            flex-direction: column;
+            .text{
+                margin: 50px 0;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                input{
+                    margin: 0 0 15px 0;
+                }
+                input .btn{
+                    width: 100%;
+                }
             }
         }
     }
