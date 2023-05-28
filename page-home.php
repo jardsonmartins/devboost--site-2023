@@ -1,88 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/main.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/node_modules/aos/dist/aos.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/node_modules/@fortawesome/fontawesome-free/css/all.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/node_modules/swiper/swiper-bundle.min.css">
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/img/favicon.svg" type="image/x-icon">
+<?php
+    //Template name: Home
+?>
+<?php get_header(); ?>
 
-    <!-- Primary Meta Tags -->
-    <title>DevBoost | Escola de programação e Tecnologia</title>
-    <meta name="title" content="DevBoost | Escola de programação e Tecnologia">
-    <meta name="description" content="Dê start na sua jornada profissional e faça sua carreira evoluir na programação">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://devboost.com.br/">
-    <meta property="og:title" content="DevBoost | Escola de programação e Tecnologia">
-    <meta property="og:description" content="Dê start na sua jornada profissional e faça sua carreira evoluir na programação">
-    <meta property="og:image" content="https://devboost.com.br/img/content_social.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://devboost.com.br/">
-    <meta property="twitter:title" content="DevBoost | Escola de programação e Tecnologia">
-    <meta property="twitter:description" content="Dê start na sua jornada profissional e faça sua carreira evoluir na programação">
-    <meta property="twitter:image" content="https://devboost.com.br/img/content_social.jpg">
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1694146880931516');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1694146880931516&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNM6MWNL2F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VNM6MWNL2F');
-    </script>
-
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="content-dropdown">
-                <a href="https://devboost.com.br"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="" class="logo"></a>
-                <button class="menu-toggle" id="menu-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-            
-            <nav id="menu-dropdown" >
-                <ul>
-                    <li><a href="https://devboost.com.br/">Home</a></li>
-                    <li><a href="http://bit.ly/3Xt0qQ9" target="_blank">Comunidade</a></li>
-                    <li><a href="https://blog.devboost.com.br/">Blog</a></li>
-                </ul>
-                <div class="btns">
-                    <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer matrícula</button></a>
-                    <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
-                </div>
-            </nav>
-            
-        </div>
-    </header>
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
     <section class="hero">
         <div class="container">
@@ -918,59 +839,6 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="top">
-                <div class="logo">
-                    <a href="https://devboost.com.br/"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt=""></a>
-                    <div class="linha"></div>
-                    <p>Aqui você dá um boost na sua carreira.</p>
-                </div>
-                <div class="menu">
-                    <h6>Menu</h6>
-                    <ul>
-                        <li><a href="https://devboost.com.br/">Home</a></li>
-                        <li><a href="https://blog.devboost.com.br/">Blog</a></li>
-                        <li><a href="https://discord.com/invite/zjyJMyV5Yz">Comunidade</a></li>
-                    </ul>
-                </div>
-                <div class="contatos">
-                    <h6>Fale conosco</h6>
-                    <ul>
-                        <li><a href="https://api.whatsapp.com/send?phone=5585992364455&text=Ol%C3%A1%2C%20tenho%20d%C3%BAvida%20sobre" target="_blank"><i class="fa-brands fa-whatsapp fa-lg"></i>Whatsapp</a></li>
-                        <li><a href="mailto:contato@devboost.com.br"><i class="fa-regular fa-envelope fa-lg" target="_blank"></i>Suporte@devboost.com.br</a></li>
-                    </ul>
-                </div>
-                <div class="transparencia">
-                    <h6>Transparência</h6>
-                    <ul>
-                        <li><a href="termosdeuso.html" target="_blank">Termos de uso</a></li>
-                        <li><a href="politicadeprivacidade.html" target="_blank">Política de privacidade</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="bottom">
-                <p>2023 © DevBoost - Todos os direitos reservados.</p>
-                <div class="social">
-                    <ul>
-                        <li><a href="https://www.youtube.com/@dev_boost" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                        <li><a href="https://www.instagram.com/dev_boost/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.facebook.com/devboostbr" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="https://www.facebook.com/devboostbr" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
-                        <li><a href="https://discord.com/invite/zjyJMyV5Yz" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
-                        <li><a href="https://open.spotify.com/playlist/3MpdyNRrzipeAh9vgweDQO?si=b394114a619844cc&utm_medium=share&utm_source=linktree&nd=1" target="_blank"><i class="fa-brands fa-spotify"></i></a></li>
-                        <li><a href="https://twitter.com/DevBoostbr" target="_blank"><i class="fa-brands fa-twitter fa-lg"></i></a></li>
-                        <li><a href="https://www.linkedin.com/company/dev-boost/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php endwhile; else: endif; ?>
 
-    <script src="<?php echo get_template_directory_uri() ?>/node_modules/aos/dist/aos.js"></script>
-    <script src="<?php echo get_template_directory_uri() ?>/node_modules/swiper/swiper-bundle.min.js"></script>
-    <script src="<?php echo get_template_directory_uri() ?>/js/script.js"></script>
-    
-</body>
-</html>
+<?php get_footer() ?>
