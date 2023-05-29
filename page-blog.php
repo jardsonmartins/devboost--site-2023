@@ -48,7 +48,7 @@
                     <?php if(have_posts()) : while ($top_views_posts -> have_posts()) : $top_views_posts -> the_post(); ?>
                     <a href="<?php the_permalink(); ?>" class="card-post-lg">
                         <div class="image">
-                            <img src="<?php echo get_template_directory_uri()?>/img/img_blog.jpg" alt="">
+                            <?php the_post_thumbnail(); ?>
                         </div>
                         <?php 
                             $category = get_the_category( $post -> ID);
