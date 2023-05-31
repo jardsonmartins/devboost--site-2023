@@ -51,11 +51,11 @@
                 </div>
                 <div class="author">
                     <div class="perfil">
-                        <img src="" alt="">
+                        <img src="<?php echo get_template_directory_uri()?>/img/perfil.jpg" alt="">
                     </div>
                     <div class="text">
                         <h4>Jardson Martins</h4>
-                        <span class="function">Co-fundador da DevBoost</span>
+                        <span class="tag">Co-fundador da DevBoost</span>
                         <p>Jardson Martins é formado em Sistemas de informação, co-fundador da DevBoost. UI/UX Designer e Front-end, trabalha com tecnologia desde 2014.</p>
                         <div class="social">
                             <ul>

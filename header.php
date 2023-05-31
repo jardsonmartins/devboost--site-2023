@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/node_modules/swiper/swiper-bundle.min.css">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri()?>/img/favicon.svg" type="image/x-icon">
-    <title><?php bloginfo('name')?> <?php wp_title('-') ?></title>
+    <title><?php bloginfo('name')?> <?php wp_title('|') ?></title>
 
     <?php wp_head(); ?>
 </head>

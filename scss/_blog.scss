@@ -204,7 +204,7 @@
     }
 
     .latest{
-        padding: 50px 0;
+        padding-top: 50px;
         .container{
             display: flex;
             justify-content: space-between;
@@ -221,10 +221,6 @@
                 flex-direction: column;
             }
         }
-    }
-
-    .newsletter{
-        margin-bottom: 70px;
     }
 }
 
@@ -297,41 +293,59 @@
                 h6{
                     margin-bottom: 12px;
                 }
+                .font, .category{
+                    .tag{
+                        font-family: 'Inter';
+                        font-weight: 400;
+                        font-size: 15px;
+                        line-height: 26px;
+                        display: inline-block;
+                        padding: 4px 20px;
+                        background-color: #F7F7F9;
+                        border-radius: 15px;
+                        margin-top: 12px;
+                    }
+                }
                 .category{
                     margin-top: 15px;
                 }
-                .tag{
-                    font-family: 'Inter';
-                    font-weight: 400;
-                    font-size: 15px;
-                    line-height: 26px;
-                    background-color: #F7F7F9;
-                    padding: 5px 20px;
-                    border-radius: 15px;
-                }
             }
             .author{
+                width: 100%;
+                height: auto;
                 display: flex;
                 flex-direction: row;
                 margin-top: 30px;
+                padding: 30px 0 20px 0;
+                border-top: 1px solid #DBDBDB;
+                .perfil{
+                    margin-right: 35px;
+                    img{
+                        width: 200px;
+                        height: auto;
+                        border-radius: 50%;
+                    }
+                }
                 .text{
                     h4{
                         color: $orange;
                     }
-                    .function{
-                        margin-top: 900px;
+                    .tag{
                         font-family: 'Inter';
                         font-weight: 400;
                         font-size: 15px;
                         line-height: 22px;
+                        padding: 5px 15px;
                         background-color: #F7F7F9;
-                        padding: 5px 20px;
+                        color: #6F7385;
+                        display: inline-block;
+                        margin: 8px 0;
                     }
                     .social{
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        margin-top: 20px;
+                        margin-top: 15px;
                         ul{
                             display: flex;
                             flex-direction: row;
@@ -345,6 +359,9 @@
                                 justify-content: center;
                                 i{
                                     color: #6F7385;
+                                    &:hover{
+                                        color: $orange;
+                                    }
                                 }
                                 &:not(:first-child){
                                     margin-left: 15px;
@@ -355,6 +372,7 @@
                             margin-left: 25px;
                             display: flex;
                             align-items: center;
+                            color: #6F7385;
                             i{
                                 margin-left: 10px;
                             }
