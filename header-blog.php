@@ -15,10 +15,10 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <header class="menu-principal">
+    <header class="menu-blog">
         <div class="container">
             <div class="content-dropdown">
-                <a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="" class="logo"></a>
+                <a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo_blog.svg" alt="" class="logo"></a>
                 <button class="menu-toggle" id="menu-toggle">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -34,9 +34,12 @@
                     wp_nav_menu( $args );
                 ?>
 
-                <div class="btns">
-                    <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer matrícula</button></a>
-                    <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
+                <div class="icons">
+                    <ul>
+                        <li><a href="https://www.youtube.com/@dev_boost" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li><a href="https://www.instagram.com/dev_boost/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/dev-boost/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
                 </div>
             </nav>
             
