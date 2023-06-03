@@ -18,7 +18,7 @@
     <header>
         <div class="container">
             <div class="content-dropdown">
-                <a href="<?php echo get_template_directory_uri()?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="" class="logo"></a>
+                <a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="" class="logo"></a>
                 <button class="menu-toggle" id="menu-toggle">
                     <i class="fa-solid fa-bars"></i>
                 </button>

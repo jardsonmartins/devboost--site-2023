@@ -2,7 +2,7 @@
         <div class="container">
             <div class="top">
                 <div class="logo">
-                    <a href="https://devboost.com.br/"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt=""></a>
+                    <a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt=""></a>
                     <div class="linha"></div>
                     <p>Aqui você dá um boost na sua carreira.</p>
                 </div>

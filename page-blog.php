@@ -20,13 +20,13 @@
                 <ul>
                     <li>Últimas notícias</li>
                     <li>Mais lidas</li>
-                    <li>Mais lidas</li>
+                    <li><a href="<?php echo get_category_link('4') ?>"><?php echo get_cat_name('4')?></a></li>
                     <li>Mais lidas</li>
                     <li>Mais lidas</li>
                     <li>Mais lidas</li>
                 </ul>       
-                <form action="">
-                    <input type="text" name="Pesquisar" placeholder="Pesquisar">
+                <form action="<?php echo home_url(); ?>">
+                    <input type="text" name="s" placeholder="Pesquisar">
                     <button><i class="icon fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>

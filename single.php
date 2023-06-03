@@ -41,8 +41,15 @@
 
                 <div class="description">
                     <div class="font">
-                        <h6>Fontes</h6>
-                        <a href="" class="tag">Tecmundo</a>
+                        <?php
+                            $nome_fonte = get_post_meta(get_the_ID(), 'nome_fonte', true);
+                            $link_fonte = get_post_meta(get_the_ID(), 'link_fonte', true);
+
+                            if (!empty($nome_fonte) && !empty($link_fonte)) {
+                                echo '<h6>Fontes</h6>';
+                                echo '<a href="' . esc_url($link_fonte) . '" target="_blank" class="tag">' . esc_html($nome_fonte) . '</a>';
+                            }
+                        ?>
                     </div>
                     <div class="category">
                         <h6>Categorias</h6>
@@ -59,7 +66,18 @@
                 
                 <div class="author">
                     <div class="perfil">
-                        <img src="<?php echo get_template_directory_uri()?>/img/perfil.jpg" alt="">
+                        <?php
+                            $author_id = get_the_author_meta('ID');
+                            $author_avatar = get_user_meta($author_id, 'simple_local_avatar', true);
+                        
+                            if (!empty($author_avatar) && is_numeric($author_avatar)) {
+                                echo wp_get_attachment_image($author_avatar, 'thumbnail');
+                            } elseif (!empty($author_avatar)) {
+                                echo '<img src="' . esc_url($author_avatar) . '" alt="Avatar" />';
+                            } else {
+                                echo get_avatar($author_id, 'thumbnail');
+                            }
+                        ?>
                     </div>
                     <div class="text">
                         <h4><?php echo get_the_author_meta('display_name'); ?></h4>
@@ -69,7 +87,14 @@
                             ?> 
                             <?php echo '<span class="tag">',$funcao,'</span>' ?>
                         <?php endif; ?>
-                        <p>Jardson Martins é formado em Sistemas de informação, co-fundador da DevBoost. UI/UX Designer e Front-end, trabalha com tecnologia desde 2014.</p>
+                        <?php
+                            $author_id = get_the_author_meta('ID');
+                            $biografia = get_the_author_meta('description');
+
+                            if (!empty($biografia)) {
+                                echo '<p>', esc_html($biografia), '</p>';
+                            }
+                        ?>
                         <div class="social">
                             <ul>
                                 <?php   
