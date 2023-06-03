@@ -253,11 +253,14 @@
         .content{
             max-width: 800px;
             .image{
-                max-width: 100%;
                 width: 100%;
                 height: 320px;
-                object-fit: cover;
-                border-radius: 13px;
+                
+                img{
+                    width: 100%;
+                    border-radius: 13px;
+                    object-fit: cover;
+                }
             }
             .text-content{
                 margin-top: 25px;
@@ -290,9 +293,6 @@
             }
             .description{
                 margin-top: 30px;
-                h6{
-                    margin-bottom: 12px;
-                }
                 .font, .category{
                     .tag{
                         font-family: 'Inter';
@@ -383,6 +383,80 @@
         }
         .free-content{
             max-width: 280px;
+        }
+    }
+    @media (max-width: 1250px){
+        .container{
+            display: flex;
+            flex-direction: column;
+            .share{
+                display: none;
+            }
+            .content{
+                max-width: 100%;
+                .author{
+                    .perfil{
+                        display: block;
+                    }
+                }
+            }
+            .free-content{
+                max-width: 100%;
+            }
+        }
+    }
+    @media (max-width: 576px){
+        .container{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            .content{
+                .image{
+                    width: 100%;
+                    height: auto;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .text-content{
+                    .info{
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            li{
+                                &:not(:first-child){
+                                    border-left: 0;
+                                    margin-left: 0;
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .author{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .perfil{
+                        margin: 0 0 30px 0;
+                    }
+                    .text{
+                        .social{
+                            display: flex;
+                            flex-direction: column;
+                            p{
+                                margin: 20px 0 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .free-content{
+                max-width: 100%;
+            }
         }
     }
 }

@@ -46,28 +46,62 @@
                     </div>
                     <div class="category">
                         <h6>Categorias</h6>
-                        <span class="tag">Notícias</span>
+                        <?php 
+                        $category = get_the_category( $post -> ID);
+                            if(!empty($category)){
+                                foreach($category as $nameCategory){
+                                    echo '<span class="tag">'.$nameCategory -> name.'</span>';
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
+                
                 <div class="author">
                     <div class="perfil">
                         <img src="<?php echo get_template_directory_uri()?>/img/perfil.jpg" alt="">
                     </div>
                     <div class="text">
-                        <h4>Jardson Martins</h4>
-                        <span class="tag">Co-fundador da DevBoost</span>
+                        <h4><?php echo get_the_author_meta('display_name'); ?></h4>
+                        <?php   
+                            $funcao = get_the_author_meta('funcao', $author_id);
+                            if (!empty($funcao)) :
+                            ?> 
+                            <?php echo '<span class="tag">',$funcao,'</span>' ?>
+                        <?php endif; ?>
                         <p>Jardson Martins é formado em Sistemas de informação, co-fundador da DevBoost. UI/UX Designer e Front-end, trabalha com tecnologia desde 2014.</p>
                         <div class="social">
                             <ul>
-                                <li><a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <?php   
+                                    $instagram = get_the_author_meta('instagram', $author_id);
+                                    if (!empty($instagram)) :
+                                    ?> 
+                                    <?php echo '<li><a href="',$instagram,'" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>' ?>
+                                <?php endif; ?>
+                                <?php   
+                                    $twitter = get_the_author_meta('twitter', $author_id);
+                                    if (!empty($twitter)) :
+                                    ?> 
+                                    <?php echo '<li><a href="',$twitter,'" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>' ?>
+                                <?php endif; ?>
+                                <?php   
+                                    $linkedin = get_the_author_meta('linkedin', $author_id);
+                                    if (!empty($linkedin)) :
+                                    ?> 
+                                    <?php echo '<li><a href="',$linkedin,'" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>' ?>
+                                <?php endif; ?>
+                                <?php   
+                                    $youtube = get_the_author_meta('youtube', $author_id);
+                                    if (!empty($youtube)) :
+                                    ?> 
+                                    <?php echo '<li><a href="',$youtube,'" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>' ?>
+                                <?php endif; ?>
                             </ul>
                             <p><a href="">Veja mais posts deste autor<i class="fa-sharp fa-solid fa-arrow-right"></i></a></p>
                         </div>
                     </div>
                 </div>
                 
-
             </div>
             <?php include(TEMPLATEPATH .'/includes/free-content.php') ?>
         </div>
