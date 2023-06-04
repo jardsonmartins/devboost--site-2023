@@ -2,7 +2,7 @@
     //Template name: Blog
 ?>
 
-<?php get_header(); ?>
+<?php get_header('blog'); ?>
     
     <div class="blog">
         <section class="banner">
@@ -18,12 +18,12 @@
         <section class="search">
             <div class="container">
                 <ul>
-                    <li>Últimas notícias</li>
-                    <li>Mais lidas</li>
-                    <li><a href="<?php echo get_category_link('4') ?>"><?php echo get_cat_name('4')?></a></li>
-                    <li>Mais lidas</li>
-                    <li>Mais lidas</li>
-                    <li>Mais lidas</li>
+                    <li><a href="<?php echo get_category_link('8') ?>"><?php echo get_cat_name('8')?></a></li>
+                    <li><a href="<?php echo get_category_link('5') ?>"><?php echo get_cat_name('5')?></a></li>
+                    <li><a href="<?php echo get_category_link('6') ?>"><?php echo get_cat_name('6')?></a></li>
+                    <li><a href="<?php echo get_category_link('9') ?>"><?php echo get_cat_name('9')?></a></li>
+                    <li><a href="<?php echo get_category_link('7') ?>"><?php echo get_cat_name('7')?></a></li>
+                    <li><a href="<?php echo get_category_link('10') ?>"><?php echo get_cat_name('10')?></a></li>
                 </ul>       
                 <form action="<?php echo home_url(); ?>">
                     <input type="text" name="s" placeholder="Pesquisar">

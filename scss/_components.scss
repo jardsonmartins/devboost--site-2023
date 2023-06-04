@@ -124,6 +124,12 @@ details > summary {
     h4{
         margin-top: 4px;
     }
+    @media (max-width: 576px){
+        .image{
+            width: 100%;
+            height: 250px;
+        }
+    }
 }
 
 .card-post-xs{
@@ -151,6 +157,32 @@ details > summary {
         margin-left: 32px;
         h5{
             margin-top: 5px;
+        }
+    }
+    @media (max-width: 991px){
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        .image{
+            width: 100%;
+            height: 150px;
+        }
+        .info{
+            margin: 15px 0 0 0;
+        }
+    }
+    @media (max-width: 576px){
+        display: flex;
+        flex-direction: column;
+        .image{
+            width: 100%;
+            height: 250px;
+        }
+        .info{
+            margin: 15px 0;
+            h5{
+                font-size: 22px;
+            }
         }
     }
 }
@@ -224,7 +256,7 @@ details > summary {
         .card-free-content{
             display: block;
             max-width: 280px;
-            height: 160px;
+            height: auto;
             border-radius: 15px;
             overflow: hidden;
             margin-bottom: 15px;
@@ -259,7 +291,7 @@ details > summary {
             flex-direction: column;
             .card-free-content{
                 max-width: 100%;
-                height: 200px;
+                height: auto;
             }
         }
     }
@@ -312,6 +344,7 @@ details > summary {
         }
     }
     @media (max-width: 1220px){
+        width: 92%;
         .container{
             .image{
                 display: none;

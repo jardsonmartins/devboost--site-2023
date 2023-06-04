@@ -8,11 +8,14 @@
                 </div>
                 <div class="menu">
                     <h6>Menu</h6>
-                    <ul>
-                        <li><a href="https://devboost.com.br/">Home</a></li>
-                        <li><a href="https://blog.devboost.com.br/">Blog</a></li>
-                        <li><a href="https://discord.com/invite/zjyJMyV5Yz">Comunidade</a></li>
-                    </ul>
+                    <?php
+                        $args = array(
+                            'menu' => 'Header Principal',
+                            'theme_location' => 'header-principal',
+                            'container' => false
+                        );
+                        wp_nav_menu( $args );
+                    ?>
                 </div>
                 <div class="contatos">
                     <h6>Fale conosco</h6>
@@ -24,8 +27,8 @@
                 <div class="transparencia">
                     <h6>Transparência</h6>
                     <ul>
-                        <li><a href="termosdeuso.html" target="_blank">Termos de uso</a></li>
-                        <li><a href="politicadeprivacidade.html" target="_blank">Política de privacidade</a></li>
+                        <li><a href="<?php echo get_permalink(get_page_by_path('termos-de-uso'))?>" target="_blank">Termos de uso</a></li>
+                        <li><a href="<?php echo get_permalink(get_page_by_path('politica-de-privacidade'))?>" target="_blank">Política de privacidade</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,53 +1,20 @@
 header{
-    position: absolute;
-    top: 0;
-    height: 0;
-    width: 100%;
-    padding-top: 20px;
-
     .container{
         display: flex;
         justify-content: space-between;
-        .logo{
-            min-width: 150px;
-            height: auto;
-        }
-        nav{
-            display: flex;
-            justify-content: center;
-            ul{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                li{
-                    color: $white;
-                    margin-right: 40px;
-                    a{
-                        color: $white;
-                    
-                        &:hover{
-                            color: $orange;
-                        }
-                    }
-                }
-            }
-            .btns{
-                .btn{
-                    padding: 8px 20px;
-                    font-family: 'Inter';
-                    font-weight: 500;
-                    font-size: 14px;
-                    line-height: 22px;
-                }
-                .btn-outline-primary{
-                    margin-left: 30px;
-                }
-            }
-        }
         .menu-toggle{
             font-size: 23px;
             color: $white;
             display: none;
+        }
+    }
+    nav{
+        display: flex;
+        justify-content: center;
+        ul{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
     }
     
@@ -91,6 +58,90 @@ header{
                 display: block;
             }
 
+        }
+    }
+}
+.menu-principal{
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 100%;
+    padding-top: 20px;
+    .container{
+        .logo{
+            min-width: 150px;
+            height: auto;
+        }
+        nav{
+            ul{
+                li{
+                    margin-right: 40px;
+                    a{
+                        color: $white;
+                        &:hover{
+                            color: $orange;
+                        }
+                    }
+                }
+            }
+            .btns{
+                .btn{
+                    padding: 8px 20px;
+                    font-family: 'Inter';
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                .btn-outline-primary{
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}
+.menu-blog{
+    height: 85px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #E6E6E6;
+    .container{
+        .logo{
+            min-width: 250px;
+            height: auto;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            ul{
+                li{
+                    margin-right: 40px;
+                    a{
+                        color: $black;
+                        &:hover{
+                            color: $orange;
+                        }
+                    }
+                }
+            }
+            .icons{
+                ul{
+                    padding-left: 15px;
+                    border-left: 1px solid #D2D2D2;
+                    li{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 0 0 10px;
+                        background-color: $orange;
+                        a{
+                            color: $white;
+                        }
+                    }
+                }
+            }
         }
     }
 }

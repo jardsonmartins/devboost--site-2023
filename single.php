@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('blog'); ?>
 
 <?php setPotsViews(get_the_ID()); ?>
 
@@ -8,10 +8,10 @@
         <div class="container">
             <div class="share">
                 <ul>
-                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-telegram"></i></a></li>
+                    <li><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?text=<?php the_permalink(); ?>+-+DevBoost+-+<?php the_title(); ?>" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink();?>&Via:=DevBoostbr&lang=pt&related=DevBoostbr"><i class="fa-brands fa-twitter" target="_blank"></i></a></li>
+                    <li><a href="https://t.me/share/url?url={<?php the_permalink(); ?>}&text={<?php the_title(); ?>}"><i class="fa-brands fa-telegram" target="_blank"></i></a></li>
                 </ul>
             </div>
             <div class="content">
