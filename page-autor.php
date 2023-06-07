@@ -1,69 +1,12 @@
+<?php
+    //Template name: Autor
+?>
+
 <?php get_header('blog'); ?>
 
-<?php setPotsViews(get_the_ID()); ?>
-
-    <?php if(have_posts()) : while (have_posts()) : the_post(); ?>
-
-    <section class="single">
+    <section class="autorPage">
         <div class="container">
-            <div class="share">
-                <ul>
-                    <li><a href="https://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="https://api.whatsapp.com/send?text=<?php the_permalink(); ?>+-+DevBoost+-+<?php the_title(); ?>" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink();?>&Via:=DevBoostbr&lang=pt&related=DevBoostbr"><i class="fa-brands fa-twitter" target="_blank"></i></a></li>
-                    <li><a href="https://t.me/share/url?url={<?php the_permalink(); ?>}&text={<?php the_title(); ?>}"><i class="fa-brands fa-telegram" target="_blank"></i></a></li>
-                </ul>
-            </div>
             <div class="content">
-                <div class="image">
-                    <?php the_post_thumbnail(); ?>
-                </div>
-                <div class="text-content">
-                    <?php 
-                        $category = get_the_category( $post -> ID);
-
-                        if(!empty($category)){
-                            foreach($category as $nameCategory){
-                                echo '<span class="title">'.$nameCategory -> name.'</span>';
-                            }
-                        }
-                    ?>
-                    <h4><?php the_title(); ?></h4>
-                    <div class="info">
-                        <ul>
-                            <li>Por <span><?php echo get_the_author_meta('display_name'); ?></span></li>
-                            <li><i class="icon fa-regular fa-eye"></i><span><?php echo do_shortcode('[rt_reading_time postfix="min" postfix_singular="min"]') ?></span> de leitura</li>
-                            <li><i class="icon fa-regular fa-clock"></i>Publicado em <?php echo get_the_date(); ?></li>
-                        </ul>
-                    </div>
-                </div>
-                <?php the_content(); ?>
-
-                <div class="description">
-                    <div class="font">
-                        <?php
-                            $nome_fonte = get_post_meta(get_the_ID(), 'nome_fonte', true);
-                            $link_fonte = get_post_meta(get_the_ID(), 'link_fonte', true);
-
-                            if (!empty($nome_fonte) && !empty($link_fonte)) {
-                                echo '<h6>Fontes</h6>';
-                                echo '<a href="' . esc_url($link_fonte) . '" target="_blank" class="tag">' . esc_html($nome_fonte) . '</a>';
-                            }
-                        ?>
-                    </div>
-                    <div class="category">
-                        <h6>Categorias</h6>
-                        <?php 
-                        $category = get_the_category( $post -> ID);
-                            if(!empty($category)){
-                                foreach($category as $nameCategory){
-                                    echo '<span class="tag">'.$nameCategory -> name.'</span>';
-                                }
-                            }
-                        ?>
-                    </div>
-                </div>
-                
                 <div class="author">
                     <div class="perfil">
                         <?php
@@ -122,18 +65,51 @@
                                     <?php echo '<li><a href="',$youtube,'" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>' ?>
                                 <?php endif; ?>
                             </ul>
-                            <span class="authorPosts"><a href="">Veja mais posts deste autor<i class="fa-sharp fa-solid fa-arrow-right"></i></a></span>
                         </div>
                     </div>
                 </div>
-                
+                <?php
+                    $config = array (
+                        'posts_per_page' => '10',
+                        'post_type' => 'post',
+                        'order' => 'DESC'
+                    );
+
+                    $query_posts = new WP_Query( $config );
+                ?>
+                <?php if(have_posts()) : while ($query_posts -> have_posts()) : $query_posts -> the_post(); ?>
+                <a href="<?php the_permalink(); ?>" class="card-post-default">
+                    <div class="image">
+                        <?php the_post_thumbnail(); ?>
+                    </div>
+                    <div class="info">
+                        <?php 
+                            $category = get_the_category( $post -> ID);
+
+                            if(!empty($category)){
+                                foreach($category as $nameCategory){
+                                    echo '<span class="title">'.$nameCategory -> name.'</span>';
+                                }
+                            }
+                        ?>
+                        <h4><?php the_title(); ?></h4>
+                        <p><?php short_content(200);?></p>
+                        <ul>
+                            <li>
+                                <i class="icon fa-regular fa-clock"></i><?php echo get_the_date(); ?>
+                            </li>
+                            <li>
+                                <i class="icon fa-regular fa-eye"></i><span><?php echo do_shortcode('[rt_reading_time postfix="min" postfix_singular="min"]') ?></span> de leitura
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+                <?php endwhile; endif; wp_reset_query() ?>
             </div>
             <?php include(TEMPLATEPATH .'/includes/free-content.php') ?>
         </div>
     </section>
 
     <?php include(TEMPLATEPATH .'/includes/section-newsletter.php') ?>
-
-    <?php endwhile; endif; wp_reset_query() ?>
 
 <?php get_footer() ?>

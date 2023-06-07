@@ -227,6 +227,12 @@
             }
         }
         .content{
+            h1, h2, h3, h4, h5, h6{
+                margin-bottom: 4px;
+            }
+            p{
+                margin-top: 15px;
+            }
             max-width: 800px;
             .image{
                 width: 100%;
@@ -287,76 +293,6 @@
                     margin-top: 15px;
                 }
             }
-            .author{
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: row;
-                margin-top: 30px;
-                padding: 30px 0 20px 0;
-                border-top: 1px solid #DBDBDB;
-                .perfil{
-                    margin-right: 35px;
-                    img{
-                        width: 200px;
-                        height: auto;
-                        border-radius: 50%;
-                    }
-                }
-                .text{
-                    h4{
-                        color: $orange;
-                    }
-                    .tag{
-                        font-family: 'Inter';
-                        font-weight: 400;
-                        font-size: 15px;
-                        line-height: 22px;
-                        padding: 5px 15px;
-                        background-color: #F7F7F9;
-                        color: #6F7385;
-                        display: inline-block;
-                        margin: 8px 0;
-                    }
-                    .social{
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        margin-top: 15px;
-                        ul{
-                            display: flex;
-                            flex-direction: row;
-                            li{
-                                width: 40px;
-                                height: 40px;
-                                background-color: #F7F7F9;
-                                font-size: 18px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                i{
-                                    color: #6F7385;
-                                    &:hover{
-                                        color: $orange;
-                                    }
-                                }
-                                &:not(:first-child){
-                                    margin-left: 15px;
-                                }
-                            }
-                        }
-                        p{
-                            margin-left: 25px;
-                            display: flex;
-                            align-items: center;
-                            color: #6F7385;
-                            i{
-                                margin-left: 10px;
-                            }
-                        }
-                    }
-                }
-            }
         }
         .free-content{
             max-width: 280px;
@@ -371,11 +307,6 @@
             }
             .content{
                 max-width: 100%;
-                .author{
-                    .perfil{
-                        display: block;
-                    }
-                }
             }
             .free-content{
                 max-width: 100%;
@@ -413,27 +344,34 @@
                         }
                     }
                 }
-                .author{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    .perfil{
-                        margin: 0 0 30px 0;
-                    }
-                    .text{
-                        .social{
-                            display: flex;
-                            flex-direction: column;
-                            p{
-                                margin: 20px 0 0 0;
-                            }
-                        }
-                    }
-                }
+                
             }
             .free-content{
                 max-width: 100%;
             }
+        }
+    }
+}
+
+.autorPage{
+    .container{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+        .content{
+            .author{
+                max-width: 904px;
+                margin: 0;
+                padding: 0 0 30px 0;
+                border-top: 0;
+                border-bottom: 1px solid #DBDBDB;
+            }
+        }
+    }
+    @media (max-width: 1250px){
+        .container{
+            display: flex;
+            flex-direction: column;
         }
     }
 }
