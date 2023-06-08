@@ -122,7 +122,6 @@
                                     <?php echo '<li><a href="',$youtube,'" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>' ?>
                                 <?php endif; ?>
                             </ul>
-                            <span class="authorPosts"><a href="">Veja mais posts deste autor<i class="fa-sharp fa-solid fa-arrow-right"></i></a></span>
                         </div>
                     </div>
                 </div>

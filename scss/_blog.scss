@@ -207,6 +207,7 @@
         justify-content: space-between;
         padding-top: 50px;
         .share{
+            width: 100%;
             max-width: 72px;
             ul{
                 li{
@@ -228,10 +229,10 @@
         }
         .content{
             h1, h2, h3, h4, h5, h6{
-                margin-bottom: 4px;
+                margin: 0 0 10px 0;
             }
             p{
-                margin-top: 15px;
+                margin-bottom: 15px;
             }
             max-width: 800px;
             .image{
@@ -293,6 +294,13 @@
                     margin-top: 15px;
                 }
             }
+            .author{
+                .text{
+                    h4{
+                        margin: 0;
+                    }
+                }
+            }
         }
         .free-content{
             max-width: 280px;
@@ -349,29 +357,6 @@
             .free-content{
                 max-width: 100%;
             }
-        }
-    }
-}
-
-.autorPage{
-    .container{
-        display: flex;
-        justify-content: space-between;
-        padding-top: 30px;
-        .content{
-            .author{
-                max-width: 904px;
-                margin: 0;
-                padding: 0 0 30px 0;
-                border-top: 0;
-                border-bottom: 1px solid #DBDBDB;
-            }
-        }
-    }
-    @media (max-width: 1250px){
-        .container{
-            display: flex;
-            flex-direction: column;
         }
     }
 }
