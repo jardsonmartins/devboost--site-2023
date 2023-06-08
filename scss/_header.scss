@@ -170,9 +170,9 @@ header{
         }
         .btns{
             a{
-                &:not(:first-child){
+                .btn-outline-primary{
                     margin-top: 20px;
-                }
+                }                                                                                          
             }
         }
     }

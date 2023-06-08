@@ -11,7 +11,7 @@
                 <img src="<?php echo get_template_directory_uri()?>/img/icons/icon_flame.png" alt="" class="icon">Evolua sua carreira de programação</div>
                 <h1>Insights para ajudar você a crescer a sua carreira</h1>
                 <p>Seja bem-vindo ao blog da DevBoost. Fique por dentro de tudo o que acontece no mercado que mais cresce no mundo!</p>
-                <a href=""><button class="btn">Quero receber conteúdos semanais</button></a>
+                <a href="#newsletter"><button class="btn">Quero receber conteúdos semanais</button></a>
             </div>
         </section>
 
