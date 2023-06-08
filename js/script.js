@@ -1,23 +1,14 @@
-//Menu dropdown
-const buttonDropDown = document.getElementById('menu-toggle');
-const nav = document.getElementById('menu-dropdown');
-const text = document.getElementById('text-pd');
+//Menu mobile
+const btnMenu = document.getElementById('js-btn-menu-mobile');
+const overlayMenu = document.querySelector('.js-overlay');
 
-let isMenuOpen = false;
+function openMenuMobile(){
+    document.documentElement.classList.toggle('menu-opened');
+}
 
-buttonDropDown.addEventListener('click', function( ){
-  
-  if (isMenuOpen) {
-    nav.classList.add("menu-dropdown");
-    isMenuOpen = false;
-    text.classList.add("text-pd");
-    
-  } else {
-    nav.classList.remove("menu-dropdown");
-    isMenuOpen = true;
-    text.classList.remove("text-pd");
-  }  
-});
+btnMenu.addEventListener('click', openMenuMobile);
+
+overlayMenu.addEventListener('click', openMenuMobile);
 
 // Carrossel com a biblioteca Swiper
 var mySwiper = new Swiper('.swiper-container', {
@@ -44,7 +35,6 @@ AOS.init({
   delay: 100,
   once: true
 });
-
 
 // Fechar Details
 var details = document.querySelectorAll("details");

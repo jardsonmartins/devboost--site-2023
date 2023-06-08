@@ -17,14 +17,10 @@
 <body>
     <header class="menu-principal">
         <div class="container">
-            <div class="content-dropdown">
-                <a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="" class="logo"></a>
-                <button class="menu-toggle" id="menu-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-            
-            <nav id="menu-dropdown">
+            <a href="<?php echo get_home_url(); ?>" class="logo">
+                <img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="">
+            </a>
+            <nav>
                 <?php
                     $args = array(
                         'menu' => 'Header Principal',
@@ -33,12 +29,39 @@
                     );
                     wp_nav_menu( $args );
                 ?>
-
                 <div class="btns">
                     <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer matrícula</button></a>
                     <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
                 </div>
+                <div class="btn-mobile" id="js-btn-menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
             </nav>
-            
         </div>
     </header>
+
+    <div class="menu-mobile">
+        <div class="overlay js-overlay">
+            <aside>
+                <a href="<?php echo get_home_url(); ?>" class="logo">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="">
+                </a>
+                <nav>
+                    <?php
+                        $args = array(
+                            'menu' => 'Header Principal',
+                            'theme_location' => 'header-principal',
+                            'container' => false
+                        );
+                        wp_nav_menu( $args );
+                    ?>
+
+                    <div class="btns">
+                        <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer matrícula</button></a>
+                        <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
+                    </div>
+                </nav>
+            </aside>
+        </div>
+    </div>

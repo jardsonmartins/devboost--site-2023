@@ -17,14 +17,10 @@
 <body>
     <header class="menu-blog">
         <div class="container">
-            <div class="content-dropdown">
-                <a href="<?php echo get_permalink(get_page_by_path('Blog'))?>"><img src="<?php echo get_template_directory_uri() ?>/img/logo_blog.svg" alt="" class="logo"></a>
-                <button class="menu-toggle" id="menu-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-            
-            <nav id="menu-dropdown">
+            <a href="<?php echo get_home_url(); ?>" class="logo">
+                <img src="<?php echo get_template_directory_uri() ?>/img/logo_blog.svg" alt="">
+            </a>
+            <nav>
                 <?php
                     $args = array(
                         'menu' => 'Header Principal',
@@ -33,15 +29,40 @@
                     );
                     wp_nav_menu( $args );
                 ?>
-
                 <div class="icons">
-                    <ul>
-                        <li><a href="https://www.youtube.com/@dev_boost" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                        <li><a href="https://www.instagram.com/dev_boost/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/company/dev-boost/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    </ul>
+                    <a href="https://www.youtube.com/@dev_boost" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/dev_boost/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/dev-boost/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
+                <div class="btn-mobile" id="js-btn-menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
             </nav>
-            
         </div>
     </header>
+
+    <div class="menu-mobile">
+        <div class="overlay js-overlay">
+            <aside>
+                <a href="<?php echo get_home_url(); ?>" class="logo">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="">
+                </a>
+                <nav>
+                    <?php
+                        $args = array(
+                            'menu' => 'Header Principal',
+                            'theme_location' => 'header-principal',
+                            'container' => false
+                        );
+                        wp_nav_menu( $args );
+                    ?>
+
+                    <div class="btns">
+                        <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer matrícula</button></a>
+                        <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
+                    </div>
+                </nav>
+            </aside>
+        </div>
+    </div>
