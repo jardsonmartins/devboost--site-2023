@@ -13,7 +13,7 @@
                 </div>
                 <h1>Dê start na sua jornada profissional e faça sua carreira evoluir na programação</h1>
                 <p>Trilha de conhecimento completa, focada em atender as diferentes demandas do mercado.</p>
-                <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Start sua carreira agora</button></a>
+                <a href="#preco"><button class="btn">Start sua carreira agora</button></a>
             </div>
         </div>
     </section>
@@ -172,7 +172,7 @@
                 <div class="text">
                     <div class="title"><img src="<?php echo get_template_directory_uri() ?>/img/icons/icon_rocket.png" alt="">Mercado em alta</div>
                     <h2>Entre na área mais promissora da atualidade, que está em constante expansão com novas oportunidades surgindo a cada dia.</h2>
-                    <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Garantir minha vaga</button></a>
+                    <a href="#preco"><button class="btn">Garantir minha vaga</button></a>
                 </div>
                 <p>Se você procura por uma carreira promissora e cheia de oportunidades, junte-se a um dos nichos mais aquecidos do mercado, com possibilidades surgindo a todo momento. E para isso a Devboost oferece um ambiente de aprendizado imersivo, orientado por especialistas no assunto, para prepará-lo para essas oportunidades. Venha fazer parte da Devboost e comece sua jornada para se tornar um programador de destaque.</p>
             </div>
@@ -215,7 +215,7 @@
                 <div class="title">Metodologia</div>
                 <h2>Aprendemos melhor fazendo</h2>
                 <p>A Devboost adota uma metodologia de aprendizado altamente prática e voltada para ação.</p>
-                <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Quero iniciar a jornada</button></a>
+                <a href="#preco"><button class="btn">Quero iniciar a jornada</button></a>
             </div>
             <div class="content-right">
                 <ul data-aos="fade-left">
@@ -675,7 +675,7 @@
                 </div>
             </div>
         </div>
-        <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Quero aprender agora</button></a>
+        <a href="#preco"><button class="btn">Quero aprender agora</button></a>
     </section>
 
     <div class="gratuito">
@@ -728,7 +728,7 @@
         </div>
     </div>
     
-    <section class="preco">
+    <section class="preco" id="preco">
         <div class="container">
             <div class="content-preco">
                 <div class="content-left" data-aos="fade-up">
@@ -762,7 +762,7 @@
                         </div>
                         <p>Ou 12x de R$ 28,82</p>
                     </div>
-                    <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer minha matrícula</button></a>
+                    <button class="btn" id="js-form">Fazer minha matrícula</button>
                 </div>
             </div>
         </div>
@@ -838,6 +838,24 @@
             </div>
         </div>
     </section>
+
+    <div class="formulario">
+        <div class="overlay">
+            <div class="card">
+                <div class="close js-overlay-form">
+                    <i class="fa-sharp fa-solid fa-xmark"></i>
+                </div>
+                <h2>Vamos começar</h2>
+                <p>Informe seus dados abaixo para prosseguir:</p>
+                <form method="POST" onsubmit="redirecionar(event)">
+                    <input type="text" name="name" id="name" placeholder="Nome" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="tel" name="phone" id="phone" placeholder="WhatsApp" required>
+                    <button class="btn" type="submit">Continue</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <?php endwhile; else: endif; ?>
 

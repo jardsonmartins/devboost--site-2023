@@ -53,7 +53,9 @@
 
     <script src="<?php echo get_template_directory_uri()?>/node_modules/aos/dist/aos.js"></script>
     <script src="<?php echo get_template_directory_uri()?>/node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="<?php echo get_template_directory_uri()?>/node_modules/imask/dist/imask.min.js"></script>
     <script src="<?php echo get_template_directory_uri()?>/js/script.js"></script>
+    <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/86be5174-9064-472f-8602-bc0ef7ad9aca-loader.js" ></script>
     
     <?php wp_footer(); ?>
 </body>

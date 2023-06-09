@@ -1,0 +1,102 @@
+.formulario{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .card{
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 700px;
+        height: 435px;
+        background: linear-gradient(44.69deg, #F3491D, #FA752F);
+        color: $white;
+        border-radius: 10px;
+        transform: translateX(-100%);
+        transition: transform .3s;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            input{
+                width: 410px;
+                height: 46px;
+                border-radius: 5px;
+                padding-left: 25px;
+                margin-top: 18px;
+            }
+            .btn{
+                margin-top: 12px;
+                background: $black;
+                &:hover{
+                    background: $green;
+                    box-shadow: 0px 8px 26px rgba(7, 175, 105, 0);
+                }
+            }
+        }
+        .close{
+            position: absolute;
+            top: -15px;
+            left: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33px;
+            height: 33px;
+            background-color: $white;
+            border-radius: 50%;
+            cursor: pointer;
+            i{
+                font-size: 18px;
+                color: $orange;
+            }
+        }
+    }
+    @media(max-width: 745px){
+        .card{
+            width: 95%;
+        }
+    }
+    @media(max-width: 576px){
+        .card{
+            form{
+                width: 100%;
+                padding: 0 20px;
+                input{
+                    width: 100%;
+                }
+            }
+            .close{
+                left: 80%;
+            }
+        }
+    }
+}
+
+.formulario-opened{
+    .formulario{
+        opacity: 1;
+        pointer-events: all;
+        .card{
+            transform: translate(-50%, -50%);
+        }
+    }
+}
