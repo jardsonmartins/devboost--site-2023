@@ -30,7 +30,7 @@
                     wp_nav_menu( $args );
                 ?>
                 <div class="btns">
-                    <a href="#preco"><button class="btn">Fazer matrícula</button></a>
+                    <a href="#db-home-plan"><button class="btn">Fazer matrícula</button></a>
                     <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
                 </div>
                 <div class="btn-mobile" id="js-btn-menu-mobile">
@@ -58,7 +58,7 @@
                     ?>
 
                     <div class="btns">
-                        <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer matrícula</button></a>
+                        <a href="#db-home-plan"><button class="btn">Fazer matrícula</button></a>
                         <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
                     </div>
                 </nav>

@@ -18,7 +18,7 @@
 <body>
     <header class="menu-blog">
         <div class="container">
-            <a href="<?php echo get_home_url(); ?>" class="logo">
+            <a href="<?php echo get_permalink(get_page_by_path('Blog'))?>" class="logo">
                 <img src="<?php echo get_template_directory_uri() ?>/img/logo_blog.svg" alt="">
             </a>
             <nav>
@@ -60,7 +60,7 @@
                     ?>
 
                     <div class="btns">
-                        <a href="https://pay.kiwify.com.br/QTnxhp2"><button class="btn">Fazer matrícula</button></a>
+                        <a href="<?php echo get_home_url(); ?>/#db-home-plan"><button class="btn">Fazer matrícula</button></a>
                         <a href="https://dashboard.kiwify.com.br/login"><button class="btn btn-outline-primary">Login</button></a>
                     </div>
                 </nav>

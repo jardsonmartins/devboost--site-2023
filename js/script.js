@@ -50,6 +50,13 @@ function redirecionar(event) {
     window.location.href = url;
 }
 
+//Redirecionar para página de Newsletter Obrigado
+function redirectNewsletter(event) {
+  event.preventDefault();
+  const newsletter = "https://devboost.com.br/newsletter-obrigado";
+  window.location.href = newsletter;
+}
+
 // Carrossel com a biblioteca Swiper
 var mySwiper = new Swiper('.swiper-container', {
       loop: true,

@@ -7,7 +7,7 @@
             <h4>Cadastre-se e fique atualizado sobre o mundo da tecnologia ✌️</h4>
             <p>Dicas e novidades direto no seu e-mail.</p>
         </div>
-        <form method="POST">
+        <form method="POST" onsubmit="redirectNewsletter(event)">
             <input type="email" name="email" id="email" placeholder="nome@seuemail.com" required>
             <button class="btn" type="submit">Cadastrar</button>
         </form>
